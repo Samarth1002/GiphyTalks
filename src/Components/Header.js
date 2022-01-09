@@ -31,15 +31,13 @@ const Header = ({ addGiphyList }) => {
   };
 
   return (
-    <div>
+    <div className="my-5">
       <Form onSubmit={handleSubmit}>
         <InputGroup>
           <Input
             type="text"
             value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-            }}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
           <Button color="warning" type="submit">
             Search
