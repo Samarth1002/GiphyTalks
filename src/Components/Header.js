@@ -14,11 +14,11 @@ const Header = ({ addGiphyList }) => {
         params: {
           api_key: KEY,
           q: searchQuery,
-          limit: 15,
+          limit: 20,
         },
       });
-      const dataList = data.data;
-      addGiphyList(dataList);
+
+      addGiphyList(data.data);
     } catch (error) {
       console.log(searchQuery);
       console.log("API ERROR :", error);
