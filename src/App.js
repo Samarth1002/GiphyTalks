@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./Components/Header";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { Container } from "reactstrap";
 
 function App() {
+  const [giphyList, setGiphyList] = useState([]);
+
+  const addGiphyList = (item) => {
+    setGiphyList([...giphyList, item]);
+  };
+
+  console.log("GIPHYLIST : ", giphyList);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <Header addGiphyList={addGiphyList} />
+        
+      </Container>
     </div>
   );
 }
