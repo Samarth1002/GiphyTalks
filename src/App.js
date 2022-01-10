@@ -9,11 +9,13 @@ import TrendingGiphy from "./Components/TrendingGiphy";
 
 function App() {
   const [giphyList, setGiphyList] = useState([]);
-  const [isTrendingOn, setIstrendingOn] = useState(false);
+  const [isTrendingOn, setIstrendingOn] = useState(true);
 
   const addGiphyList = (item) => {
-    setIstrendingOn(true);
-    console.log("item", item);
+    setIstrendingOn(false);
+    if (isTrendingOn) {
+      setGiphyList([]);
+    }
     setGiphyList(item);
   };
 
@@ -21,8 +23,8 @@ function App() {
     <div className="App">
       <Container>
         <Header addGiphyList={addGiphyList} />
-        {isTrendingOn && <DisplayGiphy giphyList={giphyList} />}
-        {!isTrendingOn && <TrendingGiphy />}
+        {!isTrendingOn && <DisplayGiphy giphyList={giphyList} />}
+        {isTrendingOn && <TrendingGiphy />}
       </Container>
     </div>
   );

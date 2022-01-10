@@ -35,6 +35,7 @@ const Header = ({ addGiphyList }) => {
       <Form onSubmit={handleSubmit}>
         <InputGroup>
           <Input
+            placeholder="Search here"
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
