@@ -5,13 +5,14 @@ import {
   Row,
   Col,
   CardBody,
-  CardHeader,
   CardImg,
   Card,
   CardFooter,
 } from "reactstrap";
+import { WhatsappShareButton, TelegramShareButton } from "react-share";
+import { WhatsappIcon, TelegramIcon } from "react-share";
 
-const TrendingGiphy = ({ checkVisibiltiy }) => {
+const TrendingGiphy = () => {
   const KEY = `jpR4UfL3JfXERJqyYJXGV5xyGx0a1WWH`;
 
   const [trendingGiphyList, setTrendingGiphyList] = useState([]);
@@ -28,7 +29,8 @@ const TrendingGiphy = ({ checkVisibiltiy }) => {
             },
           }
         );
-        // console.log(data);
+
+        // console.log(result);
         setTrendingGiphyList(data.data);
         console.log("List:", trendingGiphyList);
       };
@@ -40,11 +42,11 @@ const TrendingGiphy = ({ checkVisibiltiy }) => {
   }, []);
   return (
     <>
-      <Container className="my-5">
+      <Container className=" py-4 mb-4">
         <Row>
           {trendingGiphyList.map((item) => (
             <Col md="3" key={item.id}>
-              <Card>
+              <Card className="giphy-card my-2">
                 <CardBody>
                   <CardImg
                     top
@@ -53,6 +55,20 @@ const TrendingGiphy = ({ checkVisibiltiy }) => {
                     width={150}
                   />
                 </CardBody>
+                <CardFooter className="text-center share-icons">
+                  <WhatsappShareButton
+                    url={item.images.downsized.url}
+                    className="text-center "
+                  >
+                    <WhatsappIcon round={true} />
+                  </WhatsappShareButton>
+                  <TelegramShareButton
+                    url={item.images.downsized.url}
+                    className="text-center"
+                  >
+                    <TelegramIcon round={true} className="text-center" />
+                  </TelegramShareButton>
+                </CardFooter>
               </Card>
             </Col>
           ))}
