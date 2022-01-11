@@ -3,9 +3,10 @@ import Header from "./Components/Header";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { Container } from "reactstrap";
+import { Container, Button } from "reactstrap";
 import DisplayGiphy from "./Components/DisplayGiphy";
 import TrendingGiphy from "./Components/TrendingGiphy";
+import Title from "./Components/Title";
 
 function App() {
   const [giphyList, setGiphyList] = useState([]);
@@ -20,13 +21,12 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Container>
-        <Header addGiphyList={addGiphyList} />
-        {!isTrendingOn && <DisplayGiphy giphyList={giphyList} />}
-        {isTrendingOn && <TrendingGiphy />}
-      </Container>
-    </div>
+    <Container>
+      <Title />
+      <Header addGiphyList={addGiphyList} />
+      {!isTrendingOn && <DisplayGiphy giphyList={giphyList} />}
+      {isTrendingOn && <TrendingGiphy />}
+    </Container>
   );
 }
 
