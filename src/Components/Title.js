@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 
 const Title = () => {
   return (
     <>
-      <div className=" text-center main-heading my-4 py-3 ">
+      <div className=" text-center main-heading my-4 py-3">
         Angry ? Hungry ? Dazzy ? Fizzy ?
       </div>
 

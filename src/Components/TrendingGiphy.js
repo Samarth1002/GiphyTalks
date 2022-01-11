@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import {
   Container,
@@ -12,7 +12,7 @@ import {
 import { WhatsappShareButton, TelegramShareButton } from "react-share";
 import { WhatsappIcon, TelegramIcon } from "react-share";
 
-const TrendingGiphy = () => {
+export const TrendingGiphy = () => {
   const KEY = `jpR4UfL3JfXERJqyYJXGV5xyGx0a1WWH`;
 
   const [trendingGiphyList, setTrendingGiphyList] = useState([]);
@@ -40,34 +40,31 @@ const TrendingGiphy = () => {
       console.log(error.message);
     }
   }, []);
+
   return (
-    <>
-      <Row>
-        {trendingGiphyList.map((item) => (
-          <Col md="4" sm="6" lg="3" key={item.id} className="card-col">
-            <Card className="giphy-card my-3">
-              <CardBody>
-                <CardImg
-                  top
-                  src={item.images.downsized.url}
-                  height={150}
-                  width={150}
-                />
-              </CardBody>
-              <CardFooter className="text-center share-icons">
-                <WhatsappShareButton url={item.images.downsized.url}>
-                  <WhatsappIcon round={true} />
-                </WhatsappShareButton>
-                <TelegramShareButton url={item.images.downsized.url}>
-                  <TelegramIcon round={true} />
-                </TelegramShareButton>
-              </CardFooter>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </>
+    <Row>
+      {trendingGiphyList.map((item) => (
+        <Col md="4" sm="6" lg="3" key={item.id} className="card-col">
+          <Card className="giphy-card my-3">
+            <CardBody>
+              <CardImg
+                top
+                src={item.images.downsized.url}
+                height={150}
+                width={150}
+              />
+            </CardBody>
+            <CardFooter className="text-center share-icons">
+              <WhatsappShareButton url={item.images.downsized.url}>
+                <WhatsappIcon round={true} />
+              </WhatsappShareButton>
+              <TelegramShareButton url={item.images.downsized.url}>
+                <TelegramIcon round={true} />
+              </TelegramShareButton>
+            </CardFooter>
+          </Card>
+        </Col>
+      ))}
+    </Row>
   );
 };
-
-export default TrendingGiphy;

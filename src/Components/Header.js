@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { InputGroup, Form, Input, Button } from "reactstrap";
 
-// import GiphySearchData from "../Data/GiphySearchData";
-
 const Header = ({ addGiphyList }) => {
   const KEY = "jpR4UfL3JfXERJqyYJXGV5xyGx0a1WWH";
   const [searchQuery, setSearchQuery] = useState([]);
@@ -46,7 +44,7 @@ const Header = ({ addGiphyList }) => {
             color="warning"
             block
             type="submit"
-            className="mt-4  p-3 fs-5 search-btn "
+            className="mt-4 p-3 fs-5 search-btn"
           >
             Search
           </Button>

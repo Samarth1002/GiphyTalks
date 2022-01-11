@@ -45,6 +45,9 @@ body {
   margin-left: 15rem !important;
   margin-right: 15rem !important;
   font-family: "Roboto", sans-serif;
+  width: auto;
+  justify-content: center;
+  align-items: center;
 }
 .input-font {
   font-family: "Roboto", sans-serif;
@@ -57,10 +60,40 @@ body {
 }
 
 .card-col {
+  margin: 0%;
+  padding: 0%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
   align-items: center;
+}
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+.theme-icon {
+  position: fixed;
+  top: 0;
+  right: 1rem;
+  z-index: 1;
+}
+
+.theme-display {
+  margin: auto;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cnt-style {
+  background-color: #000000;
+  color: #ffffff;
 }
