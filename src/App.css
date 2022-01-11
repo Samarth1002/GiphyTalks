@@ -1,5 +1,13 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f6f6;
 }
 
 .share-icons {
@@ -7,8 +15,47 @@
   justify-content: space-around;
 }
 
-.giphy-card{
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgb(215 119 232 / 52%);
+  border-radius: 1.8rem;
+  offset: lg 3px;
+}
+
+.card-footer {
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1.5px solid rgb(137 51 181 / 55%);
+}
+.giphy-card {
   padding: 0;
   margin: 0;
-  box-shadow: 5px 5px #ffffff;
+  box-shadow: 0px 0px 12px 2px #c3e0ad, 0px 0px 13px 1px #c955ef;
+}
+
+.search-btn {
+  border-radius: 5rem !important;
+  margin-left: 15rem !important;
+  margin-right: 15rem !important;
+}
+
+.main-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 100px;
+}
+
+.card-col {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
 }
