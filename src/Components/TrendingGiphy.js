@@ -55,17 +55,11 @@ const TrendingGiphy = () => {
                 />
               </CardBody>
               <CardFooter className="text-center share-icons">
-                <WhatsappShareButton
-                  url={item.images.downsized.url}
-                  className=" "
-                >
+                <WhatsappShareButton url={item.images.downsized.url}>
                   <WhatsappIcon round={true} />
                 </WhatsappShareButton>
-                <TelegramShareButton
-                  url={item.images.downsized.url}
-                  className=""
-                >
-                  <TelegramIcon round={true} className="text-center" />
+                <TelegramShareButton url={item.images.downsized.url}>
+                  <TelegramIcon round={true} />
                 </TelegramShareButton>
               </CardFooter>
             </Card>
