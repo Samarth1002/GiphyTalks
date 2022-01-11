@@ -35,12 +35,14 @@ const Header = ({ addGiphyList }) => {
       <Form onSubmit={handleSubmit}>
         <InputGroup>
           <Input
+            className="text-center p-3 mx-2 fs-5 "
             placeholder="Search here"
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <Button color="warning" type="submit">
+
+          <Button color="warning" block type="submit" className="mt-4  p-3 fs-6 search-btn ">
             Search
           </Button>
         </InputGroup>

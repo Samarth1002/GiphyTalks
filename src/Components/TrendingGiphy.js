@@ -42,38 +42,36 @@ const TrendingGiphy = () => {
   }, []);
   return (
     <>
-      <Container className=" py-4 mb-4">
-        <Row>
-          {trendingGiphyList.map((item) => (
-            <Col md="3" key={item.id}>
-              <Card className="giphy-card my-2">
-                <CardBody>
-                  <CardImg
-                    top
-                    src={item.images.downsized.url}
-                    height={150}
-                    width={150}
-                  />
-                </CardBody>
-                <CardFooter className="text-center share-icons">
-                  <WhatsappShareButton
-                    url={item.images.downsized.url}
-                    className="text-center "
-                  >
-                    <WhatsappIcon round={true} />
-                  </WhatsappShareButton>
-                  <TelegramShareButton
-                    url={item.images.downsized.url}
-                    className="text-center"
-                  >
-                    <TelegramIcon round={true} className="text-center" />
-                  </TelegramShareButton>
-                </CardFooter>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      <Row>
+        {trendingGiphyList.map((item) => (
+          <Col md="4" sm="6" lg="3" key={item.id} className="card-col">
+            <Card className="giphy-card my-3">
+              <CardBody>
+                <CardImg
+                  top
+                  src={item.images.downsized.url}
+                  height={150}
+                  width={150}
+                />
+              </CardBody>
+              <CardFooter className="text-center share-icons">
+                <WhatsappShareButton
+                  url={item.images.downsized.url}
+                  className=" "
+                >
+                  <WhatsappIcon round={true} />
+                </WhatsappShareButton>
+                <TelegramShareButton
+                  url={item.images.downsized.url}
+                  className=""
+                >
+                  <TelegramIcon round={true} className="text-center" />
+                </TelegramShareButton>
+              </CardFooter>
+            </Card>
+          </Col>
+        ))}
+      </Row>
     </>
   );
 };
